@@ -79,6 +79,25 @@ elseif ($query_count == 2 && isset($query_args['mid']) && isset($query_args['doc
 	$redirect_url = getNotEncodedUrl('', 'mid', $query_args['mid'], 'document_srl', $query_args['document_srl']);
 }
 
+// Remove lang settings.
+elseif ($addon_info->remove_lang == 'Y')
+{
+	// If there are mid and l...
+	if (count($query_args) == 2 && isset($query_args['mid']) && isset($query_args['l']))
+	{
+		$redirect_url = getNotEncodedUrl('', 'mid', $query_args['mid']);
+	}
+	// If there are mid, l, document_srl...
+	elseif (count($query_args) == 3 && isset($query_args['mid']) && isset($query_args['l']) && isset($query_args['document_srl']))
+	{
+		$redirect_url = getNotEncodedUrl('', 'mid', $query_args['mid'], 'document_srl', $query_args['document_srl']);
+	}
+	else
+	{
+		return;
+	}
+}
+	
 // If there are other variables besides mid and document_srl...
 elseif ($query_count >= 3 && isset($query_args['mid']) && isset($query_args['document_srl']))
 {
