@@ -56,6 +56,17 @@ if (!$query_string)
 				Context::set('last_division', $_SESSION['force_rewrite'][$document_srl]['last_division'], true);
 			}
 		}
+		
+		if (isset($_SESSION['force_rewrite']['l']))
+		{
+			Context::set('l', $_SESSION['force_rewrite']['l'], true);
+			unset($_SESSION['force_rewrite']['l']);
+		}
+		if (isset($_SESSION['force_rewrite']['m']))
+		{
+			Context::set('l', $_SESSION['force_rewrite']['m'], true);
+			unset($_SESSION['force_rewrite']['m']);
+		}
 	}
 	
 	// Stop processing here.
@@ -140,6 +151,22 @@ elseif ($query_count >= 3 && isset($query_args['mid']) && isset($query_args['doc
 		{
 			unset($_SESSION['force_rewrite'][$query_args['document_srl']]['last_division']);
 		}
+	}
+	
+	// Remove other variables.
+	if (isset($query_args['_filter']))
+	{
+		unset($query_args['_filter']);
+	}
+	if (isset($query_args['l']))
+	{
+		$_SESSION['force_rewrite']['l'] = $query_args['l'];
+		unset($query_args['l']);
+	}
+	if (isset($query_args['m']))
+	{
+		$_SESSION['force_rewrite']['m'] = $query_args['m'];
+		unset($query_args['m']);
 	}
 	
 	// Prevent session storage from becoming too large.
