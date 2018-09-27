@@ -4,8 +4,8 @@
 	<title xml:lang="en">Redirect to Permalink</title>
     <description xml:lang="ko">긴 주소로 접속하면 짧은 주소로 리다이렉트합니다. SEO에 도움이 될 수 있습니다.</description>
 	<description xml:lang="en">Always redirect to the permalink if accessed with a long URL. This may help with SEO.</description>
-    <version>2.1.0</version>
-    <date>2018-09-19</date>
+    <version>2.2.0</version>
+    <date>2018-09-27</date>
 	<author link="https://www.poesis.org">
 		<name xml:lang="ko">포에시스</name>
 		<name xml:lang="en">POESIS</name>
@@ -36,8 +36,24 @@
 			</options>
 		</var>
 		<var name="remove_other" type="select">
-			<title xml:lang="ko">그 밖의 불필요한 변수 제거</title>
-			<title xml:lang="en">Remove other useless variables</title>
+			<title xml:lang="ko">그 밖의 불필요한 폼 변수 제거</title>
+			<title xml:lang="en">Remove other form variables</title>
+			<description xml:lang="ko">division, filter 등 검색에 따라붙는 지저분한 변수들을 제거합니다.</description>
+			<description xml:lang="en">Remove search-related parameters such as division, filter, etc.</description>
+			<options value="N">
+				<title xml:lang="ko">아니오</title>
+				<title xml:lang="en">No</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">예</title>
+				<title xml:lang="en">Yes</title>
+			</options>
+		</var>
+		<var name="remove_lang_mobile" type="select">
+			<title xml:lang="ko">언어 및 모바일 관련 변수 제거</title>
+			<title xml:lang="en">Remove language and mobile variables</title>
+			<description xml:lang="ko">l=ko, m=1 등을 제거합니다. 모바일 사용자가 많은 경우 문제를 일으킬 수 있습니다.</description>
+			<description xml:lang="en">Remove l=en, m=1, etc. This can cause issues if you have a lot of mobile users.</description>
 			<options value="N">
 				<title xml:lang="ko">아니오</title>
 				<title xml:lang="en">No</title>
