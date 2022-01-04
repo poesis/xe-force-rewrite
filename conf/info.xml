@@ -4,8 +4,8 @@
 	<title xml:lang="en">Redirect to Permalink</title>
     <description xml:lang="ko">긴 주소로 접속하면 짧은 주소로 리다이렉트합니다. SEO에 도움이 될 수 있습니다.</description>
 	<description xml:lang="en">Always redirect to the permalink if accessed with a long URL. This may help with SEO.</description>
-    <version>2.2.0</version>
-    <date>2018-09-27</date>
+    <version>2.3.0</version>
+    <date>2022-01-04</date>
 	<author link="https://www.poesis.org">
 		<name xml:lang="ko">포에시스</name>
 		<name xml:lang="en">POESIS</name>
