@@ -79,6 +79,13 @@ if (!$query_string)
 
 // If there is a query string, parse it to extract arguments.
 parse_str(substr($query_string, 1), $query_args);
+if (method_exists('Context', 'getRouteInfo'))
+{
+	foreach (Context::getRouteInfo()->args ?: [] as $key => $val)
+	{
+		$query_args[$key] = $val;
+	}
+}
 $query_count = count($query_args);
 $redirect_url = null;
 
