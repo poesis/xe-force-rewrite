@@ -184,7 +184,7 @@ elseif ($query_count >= 3 && isset($query_args['mid']) && isset($query_args['doc
 	}
 	
 	// Prevent session storage from becoming too large.
-	if (count($_SESSION['force_rewrite']) > 1000)
+	if (isset($_SESSION['force_rewrite']) && is_array($_SESSION['force_rewrite']) && count($_SESSION['force_rewrite']) > 1000)
 	{
 		array_shift($_SESSION['force_rewrite']);
 	}
